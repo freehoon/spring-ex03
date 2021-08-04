@@ -4,9 +4,6 @@
 
 <properties>
     <comment>DATA_SOURCE</comment>
-   <!--<entry key="jdbc.driverClassName">org.mariadb.jdbc.Driver</entry>
-    <entry key="jdbc.url">jdbc:mariadb://localhost:3306/mgootgoo?useSSL=false&amp;serverTimezone=UTC&amp;allowMultiQueries=true</entry>-->
-    <!--DB logging-->
     <entry key="jdbc.driverClassName">net.sf.log4jdbc.sql.jdbcapi.DriverSpy</entry>
     <entry key="jdbc.url">jdbc:log4jdbc:mariadb://localhost:3306/testdb?useSSL=false&amp;serverTimezone=UTC&amp;allowMultiQueries=true</entry>
     <entry key="jdbc.username">admin</entry>
