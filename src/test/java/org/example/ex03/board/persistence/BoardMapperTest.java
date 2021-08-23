@@ -1,6 +1,7 @@
-package org.example.ex03;
+package org.example.ex03.board.persistence;
 
 import lombok.Setter;
+import org.example.ex03.board.mappers.BoardMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,24 +9,18 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.sql.DataSource;
-import java.sql.Connection;
-
-import static org.junit.Assert.fail;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring/*Context.xml"})
 @PropertySource("classpath:properties/database_properties.xml")
-public class DBConnectionTest {
-    @Setter(onMethod_ = {@Autowired})
-    private DataSource dataSource;
+public class BoardMapperTest {
+
+    @Setter(onMethod_ = @Autowired)
+    private BoardMapper boardMapper;
 
     @Test
-    public void testConnection() {
-        try(Connection con = dataSource.getConnection()){
-            System.out.println(con);
-        }catch(Exception e){
-            fail(e.getMessage());
-        }
+    public void testGetTimeMepper() {
+        System.out.println(boardMapper.getClass().getName());
+        System.out.println(boardMapper.getTime());
     }
+
 }
